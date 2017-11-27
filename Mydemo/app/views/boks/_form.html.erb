@@ -1,0 +1,32 @@
+<%= form_with(model: bok, local: true) do |form| %>
+  <% if bok.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bok.errors.count, "error") %> prohibited this bok from being saved:</h2>
+
+      <ul>
+      <% bok.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_area :name, id: :bok_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pt %>
+    <%= form.text_area :pt, id: :bok_pt %>
+  </div>
+
+  <div class="field">
+    <%= form.label :author_id %>
+    <%= form.text_field :author_id, id: :bok_author_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

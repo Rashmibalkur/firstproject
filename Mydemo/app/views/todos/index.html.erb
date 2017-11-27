@@ -1,0 +1,10 @@
+<a href="/todos/new">New</a>
+
+<ul>
+	<% @todos.each do |todo| %>
+		<li>
+			<h1><%= todo.name %></h1>
+			<p><%= todo.description %></p>
+		</li>
+	<% end %>
+</ul>
